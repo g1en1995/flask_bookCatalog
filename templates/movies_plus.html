@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watchable</title>
+</head>
+
+<body>
+
+    <h1> Practicing my Jinja Skills through movies </h1>
+    <h2> This is a movie rating list by {{name}} </h2>
+
+    <table>
+        <tr>
+            <th > Movies </th>
+            <th > Ratings </th>
+            <th > Class </th>
+        </tr>
+
+        {% for movie, ratings in movies.items() %}
+        <tr>
+            <td > {{movie}} </td>
+            <td > {{ratings}} </td>
+
+            {% if ratings < 3 %}
+                <td > Poor </td>
+            {% elif  3 < ratings < 4 %}
+                <td > Average </td>
+            {% else %}
+                <td > Excellent </td>
+            {% endif %}
+
+        </tr>
+
+        {% endfor %}
+
+
+    </table>
+
+
+
+</body>
+</html>
